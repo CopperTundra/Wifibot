@@ -20,13 +20,10 @@ class ClientTcp : public QWidget
         void lecture();       // en provenance de la socket, lit la socket, Ã©met un signal vers l'IHM
     signals :
         void vers_IHM_connexion_OK();
-        void vers_IHM_texte(QString);
     private :
         QString IP;
         int port;
         QTcpSocket soc;
         };
-
-};
 
 #endif // CLIENTTCP_H

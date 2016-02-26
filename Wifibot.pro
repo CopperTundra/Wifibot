@@ -17,9 +17,11 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    clienttcp.cpp
+    clienttcp.cpp \
+    wifibot.cpp
 
 HEADERS  += mainwindow.h \
-    clienttcp.h
+    clienttcp.h \
+    wifibot.h
 
 FORMS    += mainwindow.ui
