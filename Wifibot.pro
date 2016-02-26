@@ -5,6 +5,9 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT += multimediawidgets
+QT += network
+QT += webkit webkitwidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -13,9 +16,10 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    clienttcp.cpp
 
 HEADERS  += mainwindow.h \
-    winsock2.h
+    clienttcp.h
 
 FORMS    += mainwindow.ui

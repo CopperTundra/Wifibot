@@ -1,12 +1,17 @@
 #include "mainwindow.h"
-#include <QApplication>
+#include "connect.h"
 #include <winsock2.h>
+#include <QApplication>
+#include <iostream>
+
+using namespace std;
+
 
 int main(int argc, char *argv[])
 {
+
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
-//gegzrhrzhrhrh
     return a.exec();
 }
