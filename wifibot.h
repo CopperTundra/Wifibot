@@ -163,6 +163,8 @@ private slots:
 
     void on_boutonSon_released();
 
+    void on_bouttonHaut_clicked();
+
 private:
     Ui::WifiBot *ui;
     int direction;
