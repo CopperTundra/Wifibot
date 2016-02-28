@@ -21,7 +21,7 @@ void FenetreOption::afficherImage()
     ui->CommentUtiliser->setGeometry(1,1,790,440);
     //ui->boutonFermer->setGeometry(750,450,30,30);
 
-    QPixmap *pixmap_img = new QPixmap("/home/matthieu/Cours/wifibot/testwifibot/Image_explications2.png");
+    QPixmap *pixmap_img = new QPixmap("./Image_explications2.png");
         ui->label_image->setPixmap(*pixmap_img);
         ui->label_image->adjustSize();
 }

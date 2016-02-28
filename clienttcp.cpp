@@ -1,18 +1,18 @@
 #include "clienttcp.h"
 #include <iostream>
+#define PORT 15020
 
 using namespace std;
 
 ClientTcp::ClientTcp()
 {
-    port=15020;
     QObject::connect(&soc,SIGNAL(connected()),this,SLOT(connexion_OK())); // signal émis lors de la connexion au serveur
     QObject::connect(&soc, SIGNAL(readyRead()), this, SLOT(lecture())); // signal émis lorsque des données sont prêtes à être lues
 }
+
 void ClientTcp::envoieIP(QString IP2)
 {
-    IP=IP2;
-    soc.connectToHost(IP,port);// pour se connecter au serveur
+    soc.connectToHost(IP2,PORT);// pour se connecter au serveur
 
     if(soc.waitForConnected(5000)){
 

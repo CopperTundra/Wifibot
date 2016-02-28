@@ -4,7 +4,7 @@ trame::trame()
 {
     x.clear();
 }
-
+/*
 quint16 trame::CRC(QByteArray byteArray, int pos)
 {
 
@@ -27,6 +27,7 @@ quint16 trame::CRC(QByteArray byteArray, int pos)
     }
     return crc;
 }
+*/
 
 void trame::remplirtrame(int vg,int vd)
 {
@@ -42,10 +43,10 @@ void trame::remplirtrame(int vg,int vd)
         x.append((unsigned char)qAbs(vd)>>8);
         x.append(0xA0);
 
-        quint16 Valeurcrc=CRC(x,1);
+        /*quint16 Valeurcrc=CRC(x,1);
 
         x.append((char)Valeurcrc);
-        x.append((char) (Valeurcrc>>8) );
+        x.append((char) (Valeurcrc>>8) );*/
     }
     else if (vg>0 && vd>0){
         x.append((unsigned char)vg);
@@ -54,10 +55,10 @@ void trame::remplirtrame(int vg,int vd)
         x.append((unsigned char)vd>>8);
         x.append(0xF0);
 
-        quint16 Valeurcrc=CRC(x,1);
+        /*quint16 Valeurcrc=CRC(x,1);
 
         x.append((char)Valeurcrc);
-        x.append((char) (Valeurcrc>>8));
+        x.append((char) (Valeurcrc>>8));*/
     }
     else if (vg<0 && vd>0){
         x.append((unsigned char)qAbs(vg));
@@ -66,10 +67,10 @@ void trame::remplirtrame(int vg,int vd)
         x.append((unsigned char)vd>>8);
         x.append(0xB0);
 
-        quint16 Valeurcrc=CRC(x,1);
+        /*quint16 Valeurcrc=CRC(x,1);
 
         x.append((char)Valeurcrc);
-        x.append((char) (Valeurcrc>>8));
+        x.append((char) (Valeurcrc>>8));*/
 
     }
    else {
@@ -79,10 +80,10 @@ void trame::remplirtrame(int vg,int vd)
         x.append((unsigned char)qAbs(vd)>>8);
         x.append(0xE0);
 
-        quint16 Valeurcrc=CRC(x,1);
+        /*quint16 Valeurcrc=CRC(x,1);
 
         x.append((char)Valeurcrc);
-        x.append((char) (Valeurcrc>>8));
+        x.append((char) (Valeurcrc>>8));*/
     }
 }
 

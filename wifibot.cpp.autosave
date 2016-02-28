@@ -8,6 +8,7 @@
 WifiBot::WifiBot(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::WifiBot)
+  
 {
 
     ui->setupUi(this);
