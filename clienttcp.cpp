@@ -18,9 +18,6 @@ void ClientTcp::envoieIP(QString IP2)
 
         qDebug()<<"Vous êtes connecté!"<<endl;
     }
-
-
-
 }
 void ClientTcp::envoieTexte(QByteArray t)
 {

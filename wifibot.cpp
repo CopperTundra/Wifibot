@@ -3,7 +3,10 @@
 #include <QTimer>
 #include <stdlib.h>
 #include <stdio.h>
+<<<<<<< HEAD
 #define IP "192.168.1.106"
+=======
+>>>>>>> origin/master
 
 WifiBot::WifiBot(QWidget *parent) :
     QMainWindow(parent),
@@ -25,6 +28,10 @@ WifiBot::WifiBot(QWidget *parent) :
     JAVANCE = 0;
     JERECULE =0;
     test = 0;
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 
     cameraMov = new QNetworkAccessManager(this);
 
@@ -32,13 +39,8 @@ WifiBot::WifiBot(QWidget *parent) :
     this->ajouterFluxVideo();
     this->afficherImageBouton();
     this->setFixedSize(this->width(), this->height());
-   // this->initConnexion();
-   /* for(int i=0; i<1000; i++){
-        trameEnvoi.Av(120);
-        ctcp->envoieTexte(trameEnvoi.getx());
-    }*/
 
-      this->miseEnPlaceQTimer();
+    this->miseEnPlaceQTimer();
     trameEnvoi.Av(240);
     ctcp->envoieTexte(trameEnvoi.getx());
 
@@ -115,12 +117,12 @@ void WifiBot::keyPressEvent(QKeyEvent *ev){
         this->on_boutonStop_pressed();
     }
 
-     if(ev->key() == Qt::Key_W && ui->sliderVitesse->value()!=100)
+     if(ev->key() == Qt::Key_Plus && ui->sliderVitesse->value()!=100)
     {
         ui->sliderVitesse->setValue(ui->sliderVitesse->value()+10);
     }
 
-     if(ev->key() == Qt::Key_X && ui->sliderVitesse->value()!= 0)
+     if(ev->key() == Qt::Key_Minus && ui->sliderVitesse->value()!= 0)
     {
         ui->sliderVitesse->setValue(ui->sliderVitesse->value()-10);
     }
@@ -517,7 +519,10 @@ void WifiBot::update()
 {
     int vitesse = calculVitesse();
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
     //ctcp->envoieIP("192.168.1.106");
    // trameEnvoi.Av(240);
    // ctcp->envoieTexte(trameEnvoi.getx());
@@ -858,3 +863,8 @@ void WifiBot::on_boutonSon_clicked()
    //ne fait rien
 }
 
+
+void WifiBot::on_bouttonHaut_clicked()
+{
+
+}
