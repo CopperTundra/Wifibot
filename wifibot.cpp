@@ -247,6 +247,32 @@ void WifiBot::on_boutonStop_pressed()
     direction = STOP;
 }
 
+<<<<<<< HEAD
+=======
+void WifiBot::on_boutonSon_pressed()
+{
+    ui->boutonSon->appui();
+    if(ACTIVERSON==1){
+        ACTIVERSON = 0;
+        ui->boutonSon->setIcon(QIcon(":plusDeSon3.png"));
+        ui->boutonSon->setIconSize(QSize(30,30));
+    }
+    else
+    {
+        ACTIVERSON = 1;
+        ui->boutonSon->setIcon(QIcon(":hautParleur.png"));
+        ui->boutonSon->setIconSize(QSize(30,30));
+    }
+}
+
+
+
+
+void WifiBot::on_boutonSon_released()
+{
+    ui->boutonSon->relache();
+}
+>>>>>>> origin/master
 
 
 
@@ -330,35 +356,44 @@ void WifiBot::on_boutonOptions_clicked()
 /*AFFICHER IMAGE BOUTON PAR BOUTON*/
 void WifiBot::afficherImageHaut()
 {
-    ui->bouttonHaut->setIcon(QIcon("/home/matthieu/Cours/wifibot/testwifibot/flecheHaut.png"));
+    ui->bouttonHaut->setIcon(QIcon(":flecheHaut.png"));
     ui->bouttonHaut->setIconSize(QSize(40,40));
-    ui->boutCamHaut->setIcon(QIcon("/home/matthieu/Cours/wifibot/testwifibot/flecheCamHaut.png"));
+    ui->boutCamHaut->setIcon(QIcon(":flecheCamHaut.png"));
 }
 void WifiBot::afficherImageBas()
 {
-    ui->boutonBas->setIcon(QIcon("/home/matthieu/Cours/wifibot/testwifibot/flecheBas.png"));
+    ui->boutonBas->setIcon(QIcon(":/flecheBas.png"));
     ui->boutonBas->setIconSize(QSize(40,40));
-    ui->boutCamBas->setIcon(QIcon("/home/matthieu/Cours/wifibot/testwifibot/flecheCamBas.png"));
+    ui->boutCamBas->setIcon(QIcon(":/flecheCamBas.png"));
 }
 void WifiBot::afficherImageDroit()
 {
-    ui->boutonDroite->setIcon(QIcon("/home/matthieu/Cours/wifibot/testwifibot/flecheDroite.png"));
+    ui->boutonDroite->setIcon(QIcon(":flecheDroite.png"));
     ui->boutonDroite->setIconSize(QSize(40,40));
-    ui->boutCamDroit->setIcon(QIcon("/home/matthieu/Cours/wifibot/testwifibot/flecheCamDroite.png"));
+    ui->boutCamDroit->setIcon(QIcon(":flecheCamDroite.png"));
 }
 void WifiBot::afficherImageGauche()
 {
-    ui->boutonGauche->setIcon(QIcon("/home/matthieu/Cours/wifibot/testwifibot/flecheGauche.png"));
+    ui->boutonGauche->setIcon(QIcon(":/flecheGauche.png"));
     ui->boutonGauche->setIconSize(QSize(40,40));
-    ui->boutCamGauche->setIcon(QIcon("/home/matthieu/Cours/wifibot/testwifibot/flecheCamGauche.png"));
+    ui->boutCamGauche->setIcon(QIcon(":/flecheCamGauche.png"));
 
 }
 void WifiBot::afficherImageCapture()
 {
-    ui->boutonCapture->setIcon(QIcon("/home/matthieu/Cours/wifibot/testwifibot/appareilPhoto.png"));
+    ui->boutonCapture->setIcon(QIcon(":/appareilPhoto.png"));
     ui->boutonCapture->setIconSize(QSize(30,30));
 }
 
+<<<<<<< HEAD
+=======
+void WifiBot::afficherImageSon()
+{
+    ui->boutonSon->setIcon(QIcon(":/hautParleur.png"));
+    ui->boutonSon->setIconSize(QSize(30,30));
+}
+
+>>>>>>> origin/master
 
 /*AFFICHER IMAGE SUR TOUS LES BOUTON*/
 void WifiBot::afficherImageBouton()
@@ -371,10 +406,6 @@ void WifiBot::afficherImageBouton()
 }
 
 /****
- *
- *
- *
- *
  *
  *
  *
@@ -565,7 +596,7 @@ void MainWindow::envoiTrame()
 void WifiBot::on_boutonCapture_pressed()
 {
     ui->boutonCapture->appui();
-    tempauR = "/home/matthieu/Cours/wifibot/testwifibot/CaptureDecran/";
+    tempauR = "CaptureDecran/";
     QPixmap pixmap = QPixmap();
     pixmap = QPixmap::grabWindow(ui->labelVid->winId());
     //QString format = "png";

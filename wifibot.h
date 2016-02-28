@@ -98,6 +98,7 @@ private:
     string nomCapture;
     string tempauR;
     stringstream sst;
+<<<<<<< HEAD
 
     /*char* j;
     char* a;
@@ -105,6 +106,15 @@ private:
     char* mn;
     char* s;
     char* h;*/
+=======
+    QSound* avSon = new QSound("/home/matthieu/Cours/wifibot/testwifibot/Son/avancer.wav");
+    QSound* freinSon = new QSound("/home/matthieu/Cours/wifibot/testwifibot/Son/frein.wav");
+    QSound* demarrageSon = new QSound("/home/matthieu/Cours/wifibot/testwifibot/Son/demarrage.wav");
+    QSound* standBySon = new QSound("/home/matthieu/Cours/wifibot/testwifibot/Son/arretMoteur.wav");
+    QSound* virage = new QSound("/home/matthieu/Cours/wifibot/testwifibot/Son/drift.wav");
+    QSound* arriere = new QSound("/home/matthieu/Cours/wifibot/testwifibot/Son/arriere.wav");
+
+>>>>>>> origin/master
 
 private slots:
     void update();
