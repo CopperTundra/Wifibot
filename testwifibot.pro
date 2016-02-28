@@ -34,3 +34,6 @@ HEADERS  += wifibot.h \
 
 FORMS    += wifibot.ui \
     fenetreoption.ui
+
+RESOURCES += \
+    resources.qrc

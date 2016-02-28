@@ -109,12 +109,7 @@ private:
     QSound* standBySon = new QSound("/home/matthieu/Cours/wifibot/testwifibot/Son/arretMoteur.wav");
     QSound* virage = new QSound("/home/matthieu/Cours/wifibot/testwifibot/Son/drift.wav");
     QSound* arriere = new QSound("/home/matthieu/Cours/wifibot/testwifibot/Son/arriere.wav");
-    /*char* j;
-    char* a;
-    char* m;
-    char* mn;
-    char* s;
-    char* h;*/
+
 
 private slots:
     void update();

@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <property name="tabsClosable">
     <bool>false</bool>
@@ -53,59 +53,7 @@
     <attribute name="title">
      <string>Options Supplémentaires</string>
     </attribute>
-    <widget class="QLabel" name="textInfoWifiBot">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>10</y>
-       <width>671</width>
-       <height>181</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_2">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>20</y>
-       <width>701</width>
-       <height>121</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vous avez la possibilité de prendre des captures d'écran de ce que le WifiBot voit à travers sa caméra.&lt;/p&gt;&lt;p&gt;Ces captures seront enregistrées dans le répertoire &amp;quot;CaptureDecran&amp;quot; dans le dossier du projet.&lt;/p&gt;&lt;p&gt;Les noms des images seront enregistrées à la date et à l'heure de capture.&lt;/p&gt;&lt;p&gt;Pour capturer une image, il vous suffit d'appuyer sur 'A', ou de cliquer sur le bouton 'Appareil Photo'.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_3">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>190</y>
-       <width>561</width>
-       <height>131</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Il vous est également possible d'arrêter ou de remettre le son. &lt;/p&gt;&lt;p&gt;Le son est activé par défaut, il vous suffit d'appuyer sur 'C', ou de cliquer le bouton 'Activer/Désactiver le son'.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
    </widget>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>450</y>
-     <width>591</width>
-     <height>17</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Réalisé par T.VERDU N.WACQUANT M.TURMO</string>
-   </property>
   </widget>
  </widget>
  <resources/>

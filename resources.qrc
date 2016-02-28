@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>flecheBas.png</file>
+        <file>appareilPhoto.png</file>
+        <file>flecheCamBas.png</file>
+        <file>flecheCamDroite.png</file>
+        <file>flecheCamGauche.png</file>
+        <file>flecheCamHaut.png</file>
+        <file>flecheDroite.png</file>
+        <file>flecheGauche.png</file>
+        <file>flecheHaut.png</file>
+        <file>hautParleur.png</file>
+        <file>Image_explications1.png</file>
+        <file>Image_explications2.png</file>
+        <file>plusDeSon3.png</file>
+        <file>smile.png</file>
+    </qresource>
+</RCC>
