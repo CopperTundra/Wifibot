@@ -247,32 +247,6 @@ void WifiBot::on_boutonStop_pressed()
     direction = STOP;
 }
 
-<<<<<<< HEAD
-=======
-void WifiBot::on_boutonSon_pressed()
-{
-    ui->boutonSon->appui();
-    if(ACTIVERSON==1){
-        ACTIVERSON = 0;
-        ui->boutonSon->setIcon(QIcon(":plusDeSon3.png"));
-        ui->boutonSon->setIconSize(QSize(30,30));
-    }
-    else
-    {
-        ACTIVERSON = 1;
-        ui->boutonSon->setIcon(QIcon(":hautParleur.png"));
-        ui->boutonSon->setIconSize(QSize(30,30));
-    }
-}
-
-
-
-
-void WifiBot::on_boutonSon_released()
-{
-    ui->boutonSon->relache();
-}
->>>>>>> origin/master
 
 
 
@@ -356,7 +330,7 @@ void WifiBot::on_boutonOptions_clicked()
 /*AFFICHER IMAGE BOUTON PAR BOUTON*/
 void WifiBot::afficherImageHaut()
 {
-    ui->bouttonHaut->setIcon(QIcon(":flecheHaut.png"));
+    ui->bouttonHaut->setIcon(QIcon(":/flecheHaut.png"));
     ui->bouttonHaut->setIconSize(QSize(40,40));
     ui->boutCamHaut->setIcon(QIcon(":flecheCamHaut.png"));
 }
@@ -385,15 +359,6 @@ void WifiBot::afficherImageCapture()
     ui->boutonCapture->setIconSize(QSize(30,30));
 }
 
-<<<<<<< HEAD
-=======
-void WifiBot::afficherImageSon()
-{
-    ui->boutonSon->setIcon(QIcon(":/hautParleur.png"));
-    ui->boutonSon->setIconSize(QSize(30,30));
-}
-
->>>>>>> origin/master
 
 /*AFFICHER IMAGE SUR TOUS LES BOUTON*/
 void WifiBot::afficherImageBouton()
