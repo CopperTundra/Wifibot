@@ -3,10 +3,8 @@
 #include <QTimer>
 #include <stdlib.h>
 #include <stdio.h>
-<<<<<<< HEAD
 #define IP "192.168.1.106"
-=======
->>>>>>> origin/master
+
 
 WifiBot::WifiBot(QWidget *parent) :
     QMainWindow(parent),
@@ -14,10 +12,6 @@ WifiBot::WifiBot(QWidget *parent) :
 {
 
     ui->setupUi(this);
-    ACTIVERSON = 1;
-    stoppeLeSon = 1;
-    demarrageSon->play();
-    this->miseEnPlaceQTimerSon();
 
     //ui->label_4 = new cameraVid(this);
     direction = STOP;
@@ -28,10 +22,7 @@ WifiBot::WifiBot(QWidget *parent) :
     JAVANCE = 0;
     JERECULE =0;
     test = 0;
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
 
     cameraMov = new QNetworkAccessManager(this);
 
@@ -40,7 +31,6 @@ WifiBot::WifiBot(QWidget *parent) :
     this->afficherImageBouton();
     this->setFixedSize(this->width(), this->height());
 
-    this->miseEnPlaceQTimer();
     trameEnvoi.Av(240);
     ctcp->envoieTexte(trameEnvoi.getx());
 
@@ -49,23 +39,6 @@ WifiBot::WifiBot(QWidget *parent) :
 
 
 }
-
-void WifiBot::miseEnPlaceQTimer()
-{
-    this->timer = new QTimer();
-    this->timer->setInterval(100);
-    connect(timer,SIGNAL(timeout()),this,SLOT(update()));
-    timer->start();
-}
-
-void WifiBot::miseEnPlaceQTimerSon()
-{
-    this->timerSon = new QTimer();
-    this->timerSon->setInterval(100);
-    connect(timerSon,SIGNAL(timeout()),this,SLOT(updateSon()));
-    timerSon->start();
-}
-
 
 WifiBot::~WifiBot()
 {
@@ -144,11 +117,6 @@ void WifiBot::keyPressEvent(QKeyEvent *ev){
           this->on_boutCamDroit_pressed();
      }
 
-     if(ev->key() == Qt::Key_C)
-     {
-       this->on_boutonSon_pressed();
-     }
-
 }
 
 
@@ -209,11 +177,6 @@ void WifiBot::keyReleaseEvent(QKeyEvent *ev)
     if(ev->key() == Qt::Key_D)
     {
         this->on_boutCamDroit_released();
-    }
-
-    if(ev->key() == Qt::Key_C)
-    {
-      this->on_boutonSon_released();
     }
 }
 
@@ -284,29 +247,6 @@ void WifiBot::on_boutonStop_pressed()
     direction = STOP;
 }
 
-void WifiBot::on_boutonSon_pressed()
-{
-    ui->boutonSon->appui();
-    if(ACTIVERSON==1){
-        ACTIVERSON = 0;
-        ui->boutonSon->setIcon(QIcon("/home/matthieu/Cours/wifibot/testwifibot/plusDeSon3.png"));
-        ui->boutonSon->setIconSize(QSize(30,30));
-    }
-    else
-    {
-        ACTIVERSON = 1;
-        ui->boutonSon->setIcon(QIcon("/home/matthieu/Cours/wifibot/testwifibot/hautParleur.png"));
-        ui->boutonSon->setIconSize(QSize(30,30));
-    }
-}
-
-
-
-
-void WifiBot::on_boutonSon_released()
-{
-    ui->boutonSon->relache();
-}
 
 
 
@@ -419,12 +359,6 @@ void WifiBot::afficherImageCapture()
     ui->boutonCapture->setIconSize(QSize(30,30));
 }
 
-void WifiBot::afficherImageSon()
-{
-    ui->boutonSon->setIcon(QIcon("/home/matthieu/Cours/wifibot/testwifibot/hautParleur.png"));
-    ui->boutonSon->setIconSize(QSize(30,30));
-}
-
 
 /*AFFICHER IMAGE SUR TOUS LES BOUTON*/
 void WifiBot::afficherImageBouton()
@@ -434,7 +368,6 @@ void WifiBot::afficherImageBouton()
     this->afficherImageGauche();
     this->afficherImageHaut();
     this->afficherImageCapture();
-    this->afficherImageSon();
 }
 
 /****
@@ -519,10 +452,6 @@ void WifiBot::update()
 {
     int vitesse = calculVitesse();
 
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
     //ctcp->envoieIP("192.168.1.106");
    // trameEnvoi.Av(240);
    // ctcp->envoieTexte(trameEnvoi.getx());
@@ -618,151 +547,6 @@ void WifiBot::update()
 
 }
 
-//timer pour le son
-void WifiBot::updateSon()
-{
-    if(ACTIVERSON==1)//si le son est active
-    {
-
-
-    if(JEDROITE==1&&JAVANCE==0&&JERECULE==0&&JEGAUCHE==0){
-         stoppeLeSon = 0;
-         if(virage->isFinished()){
-             virage->play();
-         }
-         standBySon->stop();
-         avSon->stop();
-         arriere->stop();
-         freinSon->stop();
-         standBySon->stop();
-
-    }
-    else if(JEDROITE==0&&JAVANCE==1&&JERECULE==0&&JEGAUCHE==0){
-         stoppeLeSon = 0;
-          standBySon->stop();
-          demarrageSon->stop();
-          arriere->stop();
-          virage->stop();
-        freinSon->stop();
-        if(avSon->isFinished()){
-            avSon->play();
-
-        }
-
-    }
-
-    else if(JEDROITE==0&&JAVANCE==0&&JERECULE==1&&JEGAUCHE==0){
-         stoppeLeSon = 0;
-         if(arriere->isFinished()){
-             arriere->play();
-         }
-
-        standBySon->stop();
-        virage->stop();
-        demarrageSon->stop();
-        avSon->stop();
-        freinSon->stop();
-
-
-    }
-    else if(JEDROITE==0&&JAVANCE==0&&JERECULE==0&&JEGAUCHE==1){
-         stoppeLeSon = 0;
-        if(virage->isFinished()){
-            virage->play();
-        }
-        demarrageSon->stop();
-        arriere->stop();
-          standBySon->stop();
-        avSon->stop();
-        freinSon->stop();
-
-
-    }
-    else if(JEDROITE==1&&JAVANCE==1&&JERECULE==0&&JEGAUCHE==0){
-         stoppeLeSon = 0;
-         virage->stop();
-         demarrageSon->stop();
-         arriere->stop();
-          standBySon->stop();
-        freinSon->stop();
-        if(avSon->isFinished()){
-            avSon->play();
-
-        }
-
-
-    }
-    else if(JEDROITE==0&&JAVANCE==1&&JERECULE==0&&JEGAUCHE==1){
-         stoppeLeSon = 0;
-         virage->stop();
-         demarrageSon->stop();
-         arriere->stop();
-          standBySon->stop();
-        freinSon->stop();
-        if(avSon->isFinished()){
-            avSon->play();
-
-        }
-
-    }
-    else if(JEDROITE==1&&JAVANCE==0&&JERECULE==1&&JEGAUCHE==0){
-         stoppeLeSon = 0;
-         if(arriere->isFinished()){
-            arriere->play();
-         }
-         virage->stop();
-         demarrageSon->stop();
-          standBySon->stop();
-        freinSon->stop();
-        avSon->stop();
-
-    }
-    else if(JEDROITE==0&&JAVANCE==0&&JERECULE==1&&JEGAUCHE==1){
-        stoppeLeSon = 0;
-        if(arriere->isFinished()){
-            arriere->play();
-        }
-        demarrageSon->stop();
-        virage->stop();
-         standBySon->stop();
-        freinSon->stop();
-        avSon->stop();
-
-
-    }
-    else
-    {
-       // demarrageSon->stop();
-        arriere->stop();
-        virage->stop();
-        avSon->stop();
-        if(freinSon->isFinished()&&stoppeLeSon == 0){
-            freinSon->play();
-             stoppeLeSon = 1;
-             }
-        if(freinSon->isFinished()&&standBySon->isFinished())
-        {
-            standBySon->play();
-
-        }
-
-
-    }
-
-
-    }
-
-    else //si le son est descative
-    {
-        avSon->stop();
-        freinSon->stop();
-        demarrageSon->stop();
-        standBySon->stop();
-        arriere->stop();
-        virage->stop();
-    }
-
-}
 
 
 /*
@@ -858,10 +642,6 @@ void WifiBot::on_boutonCapture_clicked(){
     //ne fait rien
 }
 
-void WifiBot::on_boutonSon_clicked()
-{
-   //ne fait rien
-}
 
 
 void WifiBot::on_bouttonHaut_clicked()

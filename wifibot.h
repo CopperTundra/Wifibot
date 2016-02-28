@@ -44,8 +44,6 @@
     static int JERECULE;
     static int JEDROITE;
     static int test;
-    static int stoppeLeSon;
-    static int ACTIVERSON;
 
 
 #define CAM_UP "/?action=command&dest=0&plugin=0&id=10094853&group=1&value=-200"
@@ -81,12 +79,9 @@ public:
     void afficherImageGauche();
     void afficherImageDroit();
     void afficherImageCapture();
-    void afficherImageSon();
     void initConnexion();
     void miseEnPlaceQTimer();
     int calculVitesse();
-    void miseEnPlaceQTimerSon();
-
 
 
 private:
@@ -103,12 +98,7 @@ private:
     string nomCapture;
     string tempauR;
     stringstream sst;
-    QSound* avSon = new QSound("/home/matthieu/Cours/wifibot/testwifibot/Son/avancer.wav");
-    QSound* freinSon = new QSound("/home/matthieu/Cours/wifibot/testwifibot/Son/frein.wav");
-    QSound* demarrageSon = new QSound("/home/matthieu/Cours/wifibot/testwifibot/Son/demarrage.wav");
-    QSound* standBySon = new QSound("/home/matthieu/Cours/wifibot/testwifibot/Son/arretMoteur.wav");
-    QSound* virage = new QSound("/home/matthieu/Cours/wifibot/testwifibot/Son/drift.wav");
-    QSound* arriere = new QSound("/home/matthieu/Cours/wifibot/testwifibot/Son/arriere.wav");
+
     /*char* j;
     char* a;
     char* m;
@@ -118,7 +108,6 @@ private:
 
 private slots:
     void update();
-    void updateSon();
     void on_boutonGauche_pressed();
     void on_boutonGauche_released();
     void on_boutonDroite_pressed();
@@ -157,12 +146,6 @@ private slots:
 
     void on_boutonCapture_released();
 
-    void on_boutonSon_clicked();
-
-    void on_boutonSon_pressed();
-
-    void on_boutonSon_released();
-
     void on_bouttonHaut_clicked();
 
 private:
@@ -176,8 +159,7 @@ private:
      * directionAvant = 1 avant
      * directionAvant = -1 reculer
      * */
-    QTimer *timer ;
-    QTimer *timerSon;
+
     QNetworkAccessManager* cameraMov;
 };
 

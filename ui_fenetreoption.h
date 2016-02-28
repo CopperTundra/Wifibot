@@ -67,7 +67,7 @@ public:
 
         retranslateUi(FenetreOption);
 
-        CommentUtiliser->setCurrentIndex(0);
+        CommentUtiliser->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(FenetreOption);

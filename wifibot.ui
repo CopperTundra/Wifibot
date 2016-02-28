@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>738</width>
-    <height>442</height>
+    <width>771</width>
+    <height>469</height>
    </rect>
   </property>
   <property name="cursor">
@@ -23,6 +23,9 @@
    <string/>
   </property>
   <widget class="QWidget" name="centralWidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <widget class="QSlider" name="sliderVitesse">
     <property name="enabled">
      <bool>true</bool>
@@ -300,22 +303,6 @@
      <string/>
     </property>
    </widget>
-   <widget class="BoutonCamera" name="boutonSon">
-    <property name="geometry">
-     <rect>
-      <x>520</x>
-      <y>80</y>
-      <width>41</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="toolTip">
-     <string>Activer/Désactiver le son</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <zorder>sliderVitesse</zorder>
    <zorder>boutonDroite</zorder>
    <zorder>label</zorder>
@@ -332,14 +319,13 @@
    <zorder>boutCamHaut</zorder>
    <zorder>labelVid</zorder>
    <zorder>boutonCapture</zorder>
-   <zorder>boutonSon</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>738</width>
+     <width>771</width>
      <height>21</height>
     </rect>
    </property>
@@ -376,12 +362,12 @@
    <slot>setNum(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>623</x>
-     <y>155</y>
+     <x>700</x>
+     <y>188</y>
     </hint>
     <hint type="destinationlabel">
-     <x>569</x>
-     <y>91</y>
+     <x>620</x>
+     <y>89</y>
     </hint>
    </hints>
   </connection>
@@ -392,12 +378,12 @@
    <slot>setNum(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>626</x>
-     <y>223</y>
+     <x>700</x>
+     <y>256</y>
     </hint>
     <hint type="destinationlabel">
-     <x>552</x>
-     <y>91</y>
+     <x>620</x>
+     <y>89</y>
     </hint>
    </hints>
   </connection>

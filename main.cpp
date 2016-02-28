@@ -3,6 +3,7 @@
 #include "clienttcp.h"
 #include <iostream>
 #include <QApplication>
+#include <QtGui>
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
@@ -18,5 +19,6 @@ int main(int argc, char *argv[])
     w.show();
 
     return a.exec();
+
 
 }
