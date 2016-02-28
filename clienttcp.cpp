@@ -1,37 +1,66 @@
 #include "clienttcp.h"
 #include <iostream>
-#define PORT 15020
-#define IPSERVEUR "192.168.1.106"
-ClientTCP::ClientTCP()
+
+using namespace std;
+
+ClientTcp::ClientTcp()
 {
-    ClientTCP::ClientTcp()
-    {
-        port=15020;
-        QObject::connect(&soc,SIGNAL(connected()),this,SLOT(connexion_OK()));
-        // signal émis lors de la connexion au serveur
-        QObject:: connect(&soc, SIGNAL(readyRead()), this, SLOT(lecture()));
-        // signal émis lorsque des données sont prêtes à être lues
-    }
-    void ClientTCP::envoi_IP()
-    {
-        soc.connectToHost(IPSERVEUR,PORT); // pour se connecter au serveur
-        if(soc.waitForConnected(8000)){
+    port=15020;
+    QObject::connect(&soc,SIGNAL(connected()),this,SLOT(connexion_OK())); // signal émis lors de la connexion au serveur
+    QObject::connect(&soc, SIGNAL(readyRead()), this, SLOT(lecture())); // signal émis lorsque des données sont prêtes à être lues
+}
+void ClientTcp::envoieIP(QString IP2)
+{
+    IP=IP2;
+    soc.connectToHost(IP,port);// pour se connecter au serveur
 
-            qDebug()<<"Connecté!"<<endl;
-        }
-    }
+    if(soc.waitForConnected(5000)){
 
-    void ClientTCP::envoi_Texte(QByteArray t)
-    {
-        if(soc.state()==3){
-            soc.write(t);
-            soc.flush;
-            QThread::msleep(1);
-        }
-        else
-            qDebug()<<"Problème de connexion";
+        qDebug()<<"Vous êtes connecté!"<<endl;
     }
 
 
 
 }
+void ClientTcp::envoieTexte(QByteArray t)
+{
+   // cout<<"JENVOIE DES TRAMES"<<endl;
+    if(soc.state()==3){
+        soc.write(t);
+        qDebug()<<t.toHex();
+        soc.waitForBytesWritten();
+        soc.flush();
+        QThread::msleep(1);
+    }
+    else
+        qDebug()<<"Non connecté";
+}
+void ClientTcp::connexion_OK()
+{
+    emit vers_IHM_connexion_OK(); // on envoie un signal à l'IHM
+}
+void ClientTcp::lecture()
+{
+    QString ligne;
+    while(soc.canReadLine()) // tant qu'il y a quelque chose à lire dans la socket
+    {
+        ligne = soc.readLine();     // on lit une ligne
+        emit vers_IHM_texte(ligne); // on envoie à l'IHM
+    }
+}
+void ClientTcp::disconnect()
+{
+    soc.disconnectFromHost();
+}
+/*
+void ClientTcp::lectureCapteur(){
+    if(soc.bytesAvailable()>=21)
+    char tmpp[21];
+    soc.read(tmpp,21);
+    qint8 batt = ((unsigned char)(unsigned int)tmpp[2]*100/255);// batterie
+    qint8 capteurAG = ((unsigned char)(unsigned int)tmpp[3]);;//avant gauche
+    //avant droit 4
+    //arriere gauche 11
+    //arriere droit 12
+
+}*/
