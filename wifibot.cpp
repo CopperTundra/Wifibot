@@ -439,8 +439,8 @@ void WifiBot::on_boutCamDroit_released()
 int WifiBot::calculVitesse()
 {
     int vitesse = ui->sliderVitesse->value();
-    double tmp = (240*vitesse)/100 ;
-    int retour = (int)tmp;
+    int tmp = (240*vitesse)/100 ;
+    int retour = tmp;
     return retour;
 }
 
