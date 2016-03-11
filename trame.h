@@ -24,7 +24,7 @@ public:
     void remplirtrame(int vg,int vd);
     void affiche();
     QByteArray getx();
-    /*quint16 CRC(QByteArray byteArray, int pos);*/
+    quint16 CRC(QByteArray byteArray, int pos);
 private:
     QByteArray x;
 };
