@@ -8,7 +8,6 @@
 #include <QIcon>
 #include <QMessageBox>
 #include "cameravid.h"
-#include "fenetreoption.h"
 #include "clienttcp.h"
 #include "trame.h"
 #include <QTimer>
@@ -44,6 +43,11 @@
     static int JERECULE;
     static int JEDROITE;
     static int test;
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> origin/master
 
 
 #define CAM_UP "/?action=command&dest=0&plugin=0&id=10094853&group=1&value=-200"
@@ -82,11 +86,14 @@ public:
     void initConnexion();
     void miseEnPlaceQTimer();
     int calculVitesse();
+<<<<<<< HEAD
+
+=======
+>>>>>>> origin/master
 
 
 private:
     cameraVid* videoCam;
-    FenetreOption* fenOpt;
     QDateTime dateCourante;
     QString dateCouranteString;
     int annee;
@@ -98,6 +105,11 @@ private:
     string nomCapture;
     string tempauR;
     stringstream sst;
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> origin/master
 
 private slots:
     void update();
@@ -111,8 +123,6 @@ private slots:
     void on_boutonBas_pressed();
     void on_boutonStop_pressed();
     void on_boutonStop_released();
-
-    void on_boutonOptions_clicked();
 
     void on_boutCamHaut_pressed();
 
@@ -130,15 +140,17 @@ private slots:
 
     void on_boutCamDroit_released();
 
-
     void on_pushButton_clicked();
 
+<<<<<<< HEAD
+=======
     void on_boutonCapture_clicked();
 
     void on_boutonCapture_pressed();
 
     void on_boutonCapture_released();
 
+>>>>>>> origin/master
     void on_bouttonHaut_clicked();
 
 private:
@@ -152,7 +164,11 @@ private:
      * directionAvant = 1 avant
      * directionAvant = -1 reculer
      * */
+<<<<<<< HEAD
+    QTimer *timer ;
+=======
 
+>>>>>>> origin/master
     QNetworkAccessManager* cameraMov;
 };
 

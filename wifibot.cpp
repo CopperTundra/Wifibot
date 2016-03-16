@@ -40,6 +40,20 @@ WifiBot::WifiBot(QWidget *parent) :
 
 }
 
+<<<<<<< HEAD
+void WifiBot::miseEnPlaceQTimer()
+{
+    this->timer = new QTimer();
+    this->timer->setInterval(100);
+    connect(timer,SIGNAL(timeout()),this,SLOT(update()));
+    timer->start();
+}
+
+
+
+
+=======
+>>>>>>> origin/master
 WifiBot::~WifiBot()
 {
     delete ui;
@@ -60,10 +74,6 @@ void WifiBot::initConnexion()
 /*APPUI SUR LES TOUCHES DU CLAVIER ZQSDWX*/
 void WifiBot::keyPressEvent(QKeyEvent *ev){
 
-    if(ev->key() == Qt::Key_A)
-    {
-      this->on_boutonCapture_pressed();
-    }
 
     if(ev->key() == Qt::Key_I)
     {
@@ -117,6 +127,10 @@ void WifiBot::keyPressEvent(QKeyEvent *ev){
           this->on_boutCamDroit_pressed();
      }
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> origin/master
 }
 
 
@@ -129,10 +143,7 @@ void WifiBot::keyPressEvent(QKeyEvent *ev){
 /*QUAND LES TOUCHES SONT RELACHEES*/
 void WifiBot::keyReleaseEvent(QKeyEvent *ev)
 {
-    if(ev->key() == Qt::Key_A)
-    {
-      this->on_boutonCapture_released();
-    }
+
 
     if(ev->key() == Qt::Key_J)
     {
@@ -178,6 +189,10 @@ void WifiBot::keyReleaseEvent(QKeyEvent *ev)
     {
         this->on_boutCamDroit_released();
     }
+<<<<<<< HEAD
+
+=======
+>>>>>>> origin/master
 }
 
 
@@ -219,12 +234,7 @@ void WifiBot::on_bouttonHaut_pressed()
     directionAvant = 1;
     direction=AVANCER;
 
-    //avSon->play();
 
-    /*
-    trameEnvoi.Av(120);
-   // ctcp->envoieIP("192.168.1.106");
-    */
 }
 
 void WifiBot::on_boutonBas_pressed()
@@ -247,7 +257,10 @@ void WifiBot::on_boutonStop_pressed()
     direction = STOP;
 }
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/master
 
 
 
@@ -275,7 +288,6 @@ void WifiBot::on_bouttonHaut_released()
     direction=STOP;
     JAVANCE = 0;
     directionAvant = 0;
-    //delete avSon;
 }
 
 void WifiBot::on_boutonBas_released()
@@ -319,12 +331,6 @@ void WifiBot::ajouterFluxVideo()
     this->videoCam = new cameraVid(this);
 }
 
-/*QUAND ON CLIQUE SUR LE BOUTON OPTION*/
-void WifiBot::on_boutonOptions_clicked()
-{
-    fenOpt = new FenetreOption(this);
-}
-
 
 
 /*AFFICHER IMAGE BOUTON PAR BOUTON*/
@@ -353,12 +359,12 @@ void WifiBot::afficherImageGauche()
     ui->boutCamGauche->setIcon(QIcon(":/flecheCamGauche.png"));
 
 }
-void WifiBot::afficherImageCapture()
-{
-    ui->boutonCapture->setIcon(QIcon(":/appareilPhoto.png"));
-    ui->boutonCapture->setIconSize(QSize(30,30));
-}
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> origin/master
 
 /*AFFICHER IMAGE SUR TOUS LES BOUTON*/
 void WifiBot::afficherImageBouton()
@@ -367,7 +373,10 @@ void WifiBot::afficherImageBouton()
     this->afficherImageDroit();
     this->afficherImageGauche();
     this->afficherImageHaut();
+<<<<<<< HEAD
+=======
     this->afficherImageCapture();
+>>>>>>> origin/master
 }
 
 /****
@@ -544,6 +553,8 @@ void WifiBot::update()
 }
 
 
+<<<<<<< HEAD
+=======
 
 /*
  *
@@ -629,15 +640,19 @@ void WifiBot::on_boutonCapture_released()
 {
     ui->boutonCapture->relache();
 }
+>>>>>>> origin/master
 
 void WifiBot::on_pushButton_clicked(){
     //ne fait rien
 }
 
+<<<<<<< HEAD
+=======
 void WifiBot::on_boutonCapture_clicked(){
     //ne fait rien
 }
 
+>>>>>>> origin/master
 
 
 void WifiBot::on_bouttonHaut_clicked()
