@@ -40,7 +40,7 @@ WifiBot::WifiBot(QWidget *parent) :
 
 }
 
-<<<<<<< HEAD
+
 void WifiBot::miseEnPlaceQTimer()
 {
     this->timer = new QTimer();
@@ -52,8 +52,7 @@ void WifiBot::miseEnPlaceQTimer()
 
 
 
-=======
->>>>>>> origin/master
+
 WifiBot::~WifiBot()
 {
     delete ui;
@@ -127,10 +126,7 @@ void WifiBot::keyPressEvent(QKeyEvent *ev){
           this->on_boutCamDroit_pressed();
      }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 }
 
 
@@ -189,10 +185,7 @@ void WifiBot::keyReleaseEvent(QKeyEvent *ev)
     {
         this->on_boutCamDroit_released();
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 }
 
 
@@ -257,10 +250,6 @@ void WifiBot::on_boutonStop_pressed()
     direction = STOP;
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
 
 
 
@@ -360,11 +349,7 @@ void WifiBot::afficherImageGauche()
 
 }
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> origin/master
 
 /*AFFICHER IMAGE SUR TOUS LES BOUTON*/
 void WifiBot::afficherImageBouton()
@@ -373,10 +358,6 @@ void WifiBot::afficherImageBouton()
     this->afficherImageDroit();
     this->afficherImageGauche();
     this->afficherImageHaut();
-<<<<<<< HEAD
-=======
-    this->afficherImageCapture();
->>>>>>> origin/master
 }
 
 /****
@@ -553,8 +534,7 @@ void WifiBot::update()
 }
 
 
-<<<<<<< HEAD
-=======
+
 
 /*
  *
@@ -640,19 +620,16 @@ void WifiBot::on_boutonCapture_released()
 {
     ui->boutonCapture->relache();
 }
->>>>>>> origin/master
 
 void WifiBot::on_pushButton_clicked(){
     //ne fait rien
 }
 
-<<<<<<< HEAD
-=======
+
 void WifiBot::on_boutonCapture_clicked(){
     //ne fait rien
 }
 
->>>>>>> origin/master
 
 
 void WifiBot::on_bouttonHaut_clicked()

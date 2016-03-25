@@ -268,8 +268,6 @@
      <string/>
     </property>
    </widget>
-<<<<<<< HEAD
-=======
    <widget class="BoutonCamera" name="boutonCapture">
     <property name="geometry">
      <rect>
@@ -286,7 +284,6 @@
      <string/>
     </property>
    </widget>
->>>>>>> origin/master
    <zorder>sliderVitesse</zorder>
    <zorder>boutonDroite</zorder>
    <zorder>label</zorder>
@@ -301,23 +298,19 @@
    <zorder>boutCamDroit</zorder>
    <zorder>boutCamHaut</zorder>
    <zorder>labelVid</zorder>
-<<<<<<< HEAD
-=======
+
    <zorder>boutonCapture</zorder>
->>>>>>> origin/master
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-<<<<<<< HEAD
+
      <width>738</width>
      <height>20</height>
-=======
      <width>771</width>
      <height>21</height>
->>>>>>> origin/master
     </rect>
    </property>
   </widget>
